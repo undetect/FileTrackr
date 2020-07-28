@@ -5,4 +5,4 @@
 2. Add your preferred Discord webhook URL that you would like to receive notifications from.
 3. Run the start.bat file and you should be good to go!
 # Interested in the sneaker development community?
-Feel free to join our [Discord server](https://discord.gg/Y3HHftg)
+Feel free to join our [Discord server](https://discord.gg/Y3HHftg) to learn more!
