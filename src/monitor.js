@@ -48,7 +48,8 @@ function initMonitor() { // SAVES ALL SITE CONTENT To INDIVIDUAL TEXT FILES
             fetch(monitoredSites[fileName]) // GET THE FILE CONTENT
                 .then(resp => resp.text())
                 .then(content => {
-                    fs.writeFile(`../content/${fileName}.txt`, content.replace("document['onreadystatechange']", "thisisaddedin(yourmom)") + "this is added in stupid", function(err) {
+                   // fs.writeFile(`../content/${fileName}.txt`, content + '123 this is added', function(err) {   TESTING LINE TO SEE ADDED
+                   fs.writeFile(`../content/${fileName}.txt`, content , function(err) {
                         if (err) monitorLog(fileName, err, 'err');
                         monitorLog(fileName, 'Successfully pulled initial content', 'log')
                     })
