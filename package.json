@@ -4,6 +4,7 @@
   "description": "A javascript file monitoring tool, with support for Discord webhook integration, alerting you whenever a file content changes.",
   "main": "monitor.js",
   "scripts": {
+    "start": "node src/monitor.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "@retryafter",

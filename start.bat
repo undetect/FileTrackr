@@ -1,1 +1,2 @@
-node src/monitor.js
+cd "src"
+npm start
