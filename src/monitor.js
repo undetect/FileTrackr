@@ -7,17 +7,10 @@ const {
     Webhook,
     MessageBuilder
 } = require('discord-webhook-node');
-const {
-    ifError
-} = require('assert');
-const {
-    resolve
-} = require('path');
-const { dir } = require('console');
 require('dotenv').config()
 
 
-let monitoredSites = {  // ORGANIZED BY PREFERRED FILENAME : FILE URL
+let monitoredSites = { // ORGANIZED BY PREFERRED FILENAME : FILE URL
 
     "finishline": 'https://www.finishline.com/public/5f1a9c3afno20161dd820a65a151e9a', // MONITORS FINISHLINE AKAM FILE 
     "shoepalace": 'https://www.shoepalace.com/cdn-cgi/bm/cv/1284585713/api.js' // MONITORS SHOE PALACE CLOUFFLAR FINGERPRINTING FILE
@@ -50,8 +43,8 @@ function initMonitor() { // SAVES ALL SITE CONTENT To INDIVIDUAL TEXT FILES
             fetch(monitoredSites[fileName]) // GET THE FILE CONTENT
                 .then(resp => resp.text())
                 .then(content => {
-                   // fs.writeFile(`../content/${fileName}.txt`, content + '123 this is added', function(err) {   TESTING LINE TO SEE ADDED
-                   fs.writeFile( path.join(directory, fileName), content , function(err) {
+                    //  fs.writeFile(path.join(directory, fileName), content + 'reflex is a cutie', function(err) { //  TESTING LINE TO SEE ADDED
+                    fs.writeFile(path.join(directory, fileName), content, function (err) {
                         if (err) monitorLog(fileName, err, 'err');
                         monitorLog(fileName, 'Successfully pulled initial content', 'log')
                     })
@@ -74,7 +67,7 @@ function startMonitor() { // MONITORS CONTENT EVERY X DELAY AND ALERTS IF THERE 
             fetch(monitoredSites[fileName])
                 .then(resp => resp.text())
                 .then(content => {
-                    let oldData = fs.readFileSync( path.join(directory, fileName), {
+                    let oldData = fs.readFileSync(path.join(directory, fileName), {
                         encoding: 'utf8'
                     })
                     if (oldData.toString() == content.toString()) {
@@ -82,10 +75,10 @@ function startMonitor() { // MONITORS CONTENT EVERY X DELAY AND ALERTS IF THERE 
                     } else {
                         let findDiff = new Promise((resolve) => {
                             let changeArr = [" ", " "]
-                            oldData.split('').forEach(function(val, i) {
+                            oldData.split('').forEach(function (val, i) {
                                 if (val != content.charAt(i)) changeArr[0] += val; // FINDS WHAT CONTENT WAS ADDED
                             })
-                            content.split('').forEach(function(val, i) {
+                            content.split('').forEach(function (val, i) {
                                 if (val != oldData.charAt(i)) changeArr[1] += val; // FINDS WHAT CONTENT WAS ADDED
                             })
                             resolve(changeArr)
