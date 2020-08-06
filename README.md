@@ -6,4 +6,4 @@
 3. Run the seutp.bat file to install dependencies.
 3. Run the start.bat file and you should be good to go!
 # Interested in the sneaker development community?
-Feel free to join our [Discord server](https://discord.gg/Y3HHftg) to learn more!
+Feel free to join our [Discord server](https://discord.gg/Y3HHftg) to learn more! We're always looking for the next brilliant minds and creators!
