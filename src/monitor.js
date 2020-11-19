@@ -35,7 +35,7 @@ function initMonitor() { // SAVES ALL SITE CONTENT To INDIVIDUAL TEXT FILES
             .setDescription('`Starting file monitoring...`')
             .setColor('#000000')
             .setImage('https://i.imgur.com/Zn5wxLF.png')
-            .setFooter('Created by @retryafter', 'https://i.imgur.com/Zxh45Hf.png')
+            .setFooter('Created by @unresisting', 'https://i.imgur.com/Zxh45Hf.png')
             .setTimestamp()
         Object.keys(monitoredSites).forEach((fileName) => { // SAVES AN INITIAL VERSION OF EACH FILE'S CONTENT FOR LATER REFERENCE
             initEmbed.addField(fileName, monitoredSites[fileName])
@@ -94,7 +94,7 @@ function startMonitor() { // MONITORS CONTENT EVERY X DELAY AND ALERTS IF THERE 
                                 .addField(`${fileName}`, `${monitoredSites[fileName]}`)
                                 .addField(`Added`, "`" + `${added.substring(0,process.env.charLimit)}` + "`")
                                 .addField(`Removed`, "`" + `${removed.substring(0,process.env.charLimit)}` + "`")
-                                .setFooter('Created by @retryafter', 'https://i.imgur.com/Zxh45Hf.png')
+                                .setFooter('Created by @unresisting', 'https://i.imgur.com/Zxh45Hf.png')
                                 .setTimestamp()
                             let webhook = new Webhook(process.env.webhookURL);
                             webhook.send(changeEmbed)
